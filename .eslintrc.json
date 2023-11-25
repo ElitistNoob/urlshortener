@@ -1,15 +1,28 @@
 {
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es2021": true
-    },
-    "extends": ["prettier", "airbnb-base"],
-    "plugins": ["prettier"],
-    "parserOptions": {
-        "ecmaVersion": "latest"
-    },
-    "rules": {
-      "prettier/prettier": "error"
-    }
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true
+  },
+  "extends": [
+    "prettier",
+    "airbnb-base"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "prefer-destructuring": "off",
+    "camelcase": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ]
+  }
 }
