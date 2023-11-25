@@ -3,6 +3,16 @@ const mongoose = require('mongoose').default;
 require('dotenv').config();
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const URL = require('url').URL;
+
+function checkValidUrl(str) {
+  try {
+    const checkURL = new URL(str);
+    return !!checkURL;
+  } catch (err) {
+    return false;
+  }
+}
 
 function generateShortUrl() {
   const arr = new Uint16Array(1);
@@ -37,11 +47,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.post('/api/shorturl', async (req, res) => {
-  try {
-    await Url.create({ original_url: req.body.url });
-    res.redirect('/api/shorturl/');
-  } catch (err) {
-    res.status(500).json({ err });
+  if (checkValidUrl(req.body.url)) {
+    try {
+      await Url.create({ original_url: req.body.url });
+      res.redirect('/api/shorturl/');
+    } catch (err) {
+      res.status(500).json({ err });
+    }
+  } else {
+    res.send({ error: 'invalid url' });
   }
 });
 
