@@ -6,9 +6,9 @@ node_modules
 !.yarn/sdks
 !.yarn/versions
 .idea/*
-!.idea/codeStyles
-!.idea/jsLibraryMappings.xml
-!.idea/urlshortener.iml
+.idea/codeStyles
+.idea/jsLibraryMappings.xml
+.idea/urlshortener.iml
 
 # Swap the comments on the following lines if you wish to use zero-installs
 # In that case, don't forget to run `yarn config set enableGlobalCache false`!
@@ -17,5 +17,5 @@ node_modules
 #!.yarn/cache
 .pnp.*
 .yarnrc.yml
-!/.env
-!/yarn.lock
+.env
+yarn.lock
