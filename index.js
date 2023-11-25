@@ -41,13 +41,13 @@ app.post('/api/shorturl', async (req, res) => {
     await Url.create({ original_url: req.body.url });
     res.redirect('/api/shorturl/');
   } catch (err) {
-    res.status(500, `Error creating, ${err}`);
+    res.status(500, 'Oops, there was an error');
   }
 });
 
 app.get('/api/shorturl/', async (req, res) => {
-  const yes = await Url.find();
-  res.send(yes);
+  const urlQuery = await Url.find();
+  res.send(urlQuery);
 });
 
 app.get('/api/shorturl/:short_url', async (req, res) => {
