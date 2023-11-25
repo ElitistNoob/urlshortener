@@ -41,7 +41,7 @@ app.post('/api/shorturl', async (req, res) => {
     await Url.create({ original_url: req.body.url });
     res.redirect('/api/shorturl/');
   } catch (err) {
-    res.status(500, 'Oops, there was an error');
+    res.status(500).json({ err });
   }
 });
 

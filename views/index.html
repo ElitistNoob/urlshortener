@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,17 +10,15 @@
 </head>
 <body>
 <header>
-  <h1>Hello</h1>
+  <h1>Url Shortener</h1>
 </header>
 <main>
-  <section>
+  <section class="preview">
     <form action="/api/shorturl/" method="POST">
-      <fieldset>
-        <label for="url">
-          <input required type="text" id="url" name="url" placeholder="https://www.github.com/ElitistNoob" />
-        </label>
-        <button type="submit">Shorten Url</button>
-      </fieldset>
+      <label for="url">
+        <input required type="text" id="url" name="url" placeholder="https://www.github.com/ElitistNoob" />
+      </label>
+      <button type="submit">Shorten Url</button>
     </form>
   </section>
 </main>
