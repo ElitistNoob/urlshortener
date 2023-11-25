@@ -1102,7 +1102,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^7.32.0 || ^8.2.0":
+"eslint@npm:^8.54.0":
   version: 8.54.0
   resolution: "eslint@npm:8.54.0"
   dependencies:
@@ -3723,7 +3723,7 @@ __metadata:
     body-parser: "npm:^1.20.2"
     cors: "npm:^2.8.5"
     dotenv: "npm:^16.3.1"
-    eslint: "npm:^7.32.0 || ^8.2.0"
+    eslint: "npm:^8.54.0"
     eslint-config-airbnb-base: "npm:^15.0.0"
     eslint-config-prettier: "npm:^9.0.0"
     eslint-plugin-import: "npm:^2.25.2"
