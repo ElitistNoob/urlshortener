@@ -61,7 +61,10 @@ app.post('/api/shorturl', async (req, res) => {
 
 app.get('/api/shorturl/', async (req, res) => {
   const urlQuery = await Url.find();
-  res.send(urlQuery);
+  res.send({
+    original_url: urlQuery[0].original_url,
+    short_url: urlQuery[0].short_url,
+  });
 });
 
 app.get('/api/shorturl/:short_url', async (req, res) => {
