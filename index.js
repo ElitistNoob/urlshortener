@@ -50,21 +50,17 @@ app.post('/api/shorturl', async (req, res) => {
   if (checkValidUrl(req.body.url)) {
     try {
       await Url.create({ original_url: req.body.url });
-      res.redirect('/api/shorturl/');
+      const urlQuery = await Url.find();
+      res.send({
+        original_url: urlQuery[0].original_url,
+        short_url: urlQuery[0].short_url,
+      });
     } catch (err) {
       res.status(500).json({ err });
     }
   } else {
     res.send({ error: 'invalid url' });
   }
-});
-
-app.get('/api/shorturl/', async (req, res) => {
-  const urlQuery = await Url.find();
-  res.send({
-    original_url: urlQuery[0].original_url,
-    short_url: urlQuery[0].short_url,
-  });
 });
 
 app.get('/api/shorturl/:short_url', async (req, res) => {
